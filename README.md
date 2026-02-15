@@ -1,3 +1,53 @@
+## Menjalankan Project
+
+### Prasyarat
+- PHP 8.1+
+- Composer
+- Node.js 18+
+- NPM
+- MySQL (jika memakai database)
+
+### Setup Awal
+1. Install dependency backend:
+   ```bash
+   composer install
+   ```
+2. Install dependency frontend:
+   ```bash
+   npm install
+   ```
+3. Copy file environment dan generate app key:
+   ```bash
+   copy .env.example .env
+   php artisan key:generate
+   ```
+4. Atur konfigurasi database di `.env`, lalu jalankan migrasi:
+   ```bash
+   php artisan migrate
+   ```
+
+### Menjalankan Saat Development
+Jalankan 2 terminal:
+
+Terminal 1 (Laravel):
+```bash
+php artisan serve
+```
+
+Terminal 2 (Vite):
+```bash
+npm run dev
+```
+
+Akses aplikasi di:
+- `http://127.0.0.1:8000`
+- Root (`/`) akan redirect ke `/dashboard`
+- Halaman login tersedia di `/login`
+
+### Build Untuk Production
+```bash
+npm run build
+```
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -64,3 +114,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
